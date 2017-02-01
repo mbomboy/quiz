@@ -1,20 +1,31 @@
 /* Quiz styles */
+$bgColor: aliceblue;
+$font: sans-serif;
+$ltMargin: 50px;
+$padding: 10px;
 
+body, p,  {
+     font-family:$font;
+    font-size: 1em;
+    font-style:oblique;
+}
+
+@mixin border ($borderWidth: 2px, $borderType: solid, $borderColor: #064277, $borderRaduius: 20px){
+    border: $borderWidth $borderType $borderColor;
+    border-radius: $borderRaduius;
+}
 header {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $bgColor;
     text-align: center;
 }
 
 body {
     width: 600px;
     margin: auto;
-    font-family:sans-serif;
-    font-size: 1em;
-    font-style:oblique;
+   
     background-color: #dadadb
 }
 
@@ -24,17 +35,15 @@ h1 {
 }
 
 #content {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $bgColor;
 }
 
 #list{
-    border: 2px solid #064277;
-    border-radius: 20px;
-    background-color: aliceblue;
+    @include border;
+    background-color: $bgColor;
 }
 
 h2 {
@@ -42,32 +51,27 @@ h2 {
 }
 
 h3 {
-    margin-left: 50px;
+    margin-left: $ltMargin;
     color:#58a0e0
 }
 
 ul{
-    margin-left: 50px;
+    margin-left: $ltMargin;
 }
 
-p{
-    font-family: serif;
-    font-style:normal;
-}
 
 .samplepara {
-    border: 3px solid #58a0e0;
-    border-radius: 5px;
+    @include border (3px, solid, #58a0e0, 20px, );
+    
     padding: 10px;
     background-color: white;
 }
 
 footer {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $bgColor;
 }
 
 #footer {
